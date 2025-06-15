@@ -5,6 +5,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background_texture: linear-gradient(
+    135deg,
+    #f4efe6 25%,
+    #e8e2d9 25%,
+    #e8e2d9 50%,
+    #f4efe6 50%,
+    #f4efe6 75%,
+    #e8e2d9 75%,
+    #e8e2d9
+  );
+
+  --Ivery_sand: #e4d6c5;
+  --Burnt_sieanna: #984216;
+  --Stormy_sky: #78898f;
+  --Cream: #f4efe6;
+  --Dark_blue: #0e2540;
+}
+
 /* h1 {
   font-size: clamp(2rem, 5vw, 4rem);
 }
@@ -13,7 +32,87 @@ h2 {
   font-size: clamp(1.25rem, 3vw, 2.5rem);
 } */
 
+/* Øverste navbar som før */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0e2540;
+  color: white;
+}
+
+.navbar_left,
+.navbar_center,
+.navbar_right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar_center {
+  justify-content: center;
+}
+
+.navbar_left {
+  justify-content: flex-start;
+}
+
+.navbar_right {
+  justify-content: flex-end;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.contact_button {
+  padding: 8px 16px;
+  background-color: white;
+  color: #0e2540;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact_button:hover {
+  background-color: #f4efe6;
+}
+
+/* Ny menu under navbar */
+.menu_container {
+  background-color: #0e2540;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.menu_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 30px; /* afstand mellem menupunkter */
+}
+
+.menu_list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 12px;
+}
+
+.menu_list li a:hover {
+  text-decoration: underline;
+}
+
 .hero_section {
+  position: relative;
   background-image: url("../images/horses.jpg");
   background-size: cover;
   background-position: center;
@@ -24,6 +123,19 @@ h2 {
   justify-content: center;
   align-items: end;
   padding-bottom: 2%;
+}
+
+.hero_section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 37, 64, 0.6);
+  z-index: 1;
+}
+
+.hero_section > * {
+  position: relative;
+  z-index: 2;
 }
 
 .hero_div {
@@ -43,6 +155,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--Cream);
 }
 
 .tilgang_container {
@@ -65,7 +178,7 @@ h2 {
 
 .service_wrap {
   height: 400px;
-  background-color: lavender;
+  background-color: var(--Ivery_sand);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -161,4 +274,63 @@ h2 {
 .faq_wrapper {
   height: 500px;
   background-color: bisque;
+}
+
+.site_footer {
+  background-color: var(--Dark_blue);
+  color: var(--Cream);
+  padding: 40px 20px 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.footer_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer_info,
+.footer_links,
+.footer_social {
+  flex: 1 1 200px;
+}
+
+.footer_info h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.footer_links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer_links li {
+  margin-bottom: 8px;
+}
+
+.footer_links a {
+  color: var(--Cream);
+  text-decoration: none;
+}
+
+.footer_links a:hover {
+  text-decoration: underline;
+}
+
+.footer_social a img {
+  width: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.footer_bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #555;
+  padding-top: 10px;
+  font-size: 0.9rem;
 }
