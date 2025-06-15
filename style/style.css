@@ -1,0 +1,164 @@
+* {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+} */
+
+.hero_section {
+  background-image: url("../images/horses.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 2%;
+}
+
+.hero_div {
+  height: 200px;
+  width: 100vw;
+  background-color: rgba(244, 239, 230, 0.8);
+  /* background-color: #f4efe6; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tilgang_wrapper {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tilgang_container {
+  width: 30vw;
+  height: 135px;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.tilgang_btn {
+  width: 5vw;
+  height: 35px;
+  background-color: #a07d57;
+  border: none;
+}
+
+.service_wrap {
+  height: 400px;
+  background-color: lavender;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.service_point {
+  background-color: pink;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service_box {
+  width: 30vw;
+  height: 150px;
+  padding: 2%;
+  background-color: blueviolet;
+}
+
+.Bagom_wrapper {
+  height: 300px;
+  background-color: lavenderblush;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.Bagom_wrapper article {
+  height: 100%;
+  width: 30vw;
+  padding: 2%;
+  background-color: bisque;
+}
+
+.Bagom_wrapper aside {
+  height: 100%;
+  width: 30vw;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: plum;
+}
+
+.Benefits_wrapper {
+  height: 600px;
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit_article {
+  width: 45vw;
+  background-color: blanchedalmond;
+}
+
+.points_wrapper {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6%;
+}
+
+.points_wrapper article {
+  width: 73%;
+}
+
+.points_wrapper aside {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+}
+
+.points_container {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.point {
+  width: 20vw;
+  height: 200px;
+  padding: 2%;
+  background-color: lightblue;
+}
+
+.faq_wrapper {
+  height: 500px;
+  background-color: bisque;
+}
