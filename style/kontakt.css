@@ -1,0 +1,336 @@
+/* * {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap");
+
+body {
+  font-family: "Satisfy", "Raleway", sans-serif;
+  height: 600vh;
+  overflow-x: hidden;
+}
+
+:root {
+  --background_texture: linear-gradient(
+    135deg,
+    #f4efe6 25%,
+    #e8e2d9 25%,
+    #e8e2d9 50%,
+    #f4efe6 50%,
+    #f4efe6 75%,
+    #e8e2d9 75%,
+    #e8e2d9
+  );
+
+  --Ivery_sand: #e4d6c5;
+  --Burnt_sieanna: #984216;
+  --Stormy_sky: #78898f;
+  --Cream: #f4efe6;
+  --Dark_blue: #0e2540;
+}
+
+.Kontakt_headline {
+  width: auto;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightsalmon;
+}
+
+@media (min-width: 600px) {
+  .Kontakt_headline article {
+    width: 75%;
+    padding: 1rem;
+  }
+}
+
+._wrapper {
+  background-color: var(--Cream);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+._container {
+  height: auto;
+  padding: 1rem;
+  background-color: palevioletred;
+}
+
+.kontakt_divs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: lawngreen;
+}
+
+.kontakt_divs > div {
+  background-color: #e0e0e0;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 200px;
+}
+
+@media (min-width: 600px) {
+  .kontakt_divs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .kontakt_divs > div {
+    flex: 1 1 0;
+    max-width: calc(33.333% - 0.67rem);
+  }
+}
+
+@media (min-width: 900px) {
+  ._container {
+    width: 75%;
+  }
+  .kontakt_divs {
+    flex: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 75%;
+    max-height: 300px;
+  }
+
+  .kontakt_divs > div {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+}
+
+@media (min-width: 600px) {
+  .kontakt_divs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .kontakt_divs > div {
+    flex: 1 1 0;
+    max-width: calc(33.333% - 0.67rem);
+  }
+}
+
+/* hendvendelses section */
+/* .hendvendelses_wrapper {
+  width: auto;
+  height: 100px;
+  background-color: paleturquoise;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.henvendelses_container {
+  height: auto;
+  padding: 1rem;
+  background-color: yellow;
+}
+
+@media (min-width: 600px) {
+  .henvendelses_container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    background-color: lavender;
+  }
+}
+
+@media (min-width: 1024px) {
+  .henvendelses_container {
+    width: 75%;
+  }
+}  */
+
+/* ------------------- */
+/* Base Reset & Fonts  */
+/* ------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Satisfy", "Raleway", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--background_texture);
+}
+
+/* ------------------- */
+/* Root Variables      */
+/* ------------------- */
+:root {
+  --background_texture: linear-gradient(
+    135deg,
+    #f4efe6 25%,
+    #e8e2d9 25%,
+    #e8e2d9 50%,
+    #f4efe6 50%,
+    #f4efe6 75%,
+    #e8e2d9 75%,
+    #e8e2d9
+  );
+
+  --Ivery_sand: #e4d6c5;
+  --Burnt_sieanna: #984216;
+  --Stormy_sky: #78898f;
+  --Cream: #f4efe6;
+  --Dark_blue: #0e2540;
+}
+
+/* ------------------- */
+/* Kontakt Headline    */
+/* ------------------- */
+.Kontakt_headline {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightsalmon;
+  padding: 1rem;
+}
+
+.Kontakt_headline article {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* ------------------- */
+/* Kontakt Sektion     */
+/* ------------------- */
+._wrapper {
+  background-color: var(--Cream);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+._container {
+  width: 100%;
+  max-width: 800px;
+  background-color: palevioletred;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Kontakt bokse */
+.kontakt_divs {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: lawngreen;
+  border-radius: 8px;
+}
+
+.kontakt_divs > div {
+  background-color: #e0e0e0;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 200px;
+}
+
+/* ------------------- */
+/* Henvendelses Sektion*/
+/* ------------------- */
+.hendvendelses_wrapper {
+  width: 100%;
+  min-height: 100px;
+  background-color: paleturquoise;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.henvendelses_container {
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: yellow;
+}
+
+/* ------------------- */
+/* Media Queries       */
+/* ------------------- */
+
+/* 📱 600px og op – 3 kolonner */
+@media (min-width: 600px) {
+  .Kontakt_headline article {
+    width: 75%;
+  }
+
+  .kontakt_divs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .kontakt_divs > div {
+    flex: 1 1 0;
+    max-width: calc(33.333% - 1rem);
+    aspect-ratio: 4 / 3; /* holder proportionerne */
+  }
+
+  .henvendelses_container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    background-color: lavender;
+  }
+}
+
+/* 💻 900px og op – bredere layout */
+@media (min-width: 900px) {
+  ._wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  ._container {
+    width: 75%;
+  }
+
+  .kontakt_divs {
+    width: 75%;
+    flex-wrap: nowrap;
+    max-height: none;
+    gap: 2rem;
+  }
+
+  .kontakt_divs > div {
+    flex: 1 1 calc(33.333% - 1.33rem);
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* 🖥️ 1024px og op – ekstra bredde */
+@media (min-width: 1024px) {
+  .henvendelses_container {
+    width: 75%;
+  }
+}
