@@ -1,83 +1,72 @@
-const menuToggleBtn = document.querySelector(".menu_toggle");
+const menuToggle = document.querySelector(".menu_toggle");
 const navbarCenter = document.querySelector(".navbar_center");
 
-menuToggleBtn.addEventListener("click", () => {
-  const expanded =
-    menuToggleBtn.getAttribute("aria-expanded") === "true" || false;
-  menuToggleBtn.setAttribute("aria-expanded", !expanded);
+menuToggle.addEventListener("click", () => {
   navbarCenter.classList.toggle("open");
 });
 
-// fetch("services.json")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     const container = document.querySelector(".card_container");
-
-//     data.forEach((service, index) => {
-//       const card = document.createElement("div");
-//       card.className = "card";
-
-//       card.innerHTML = `
-//         <img src="ikon${(index % 3) + 1}.svg" alt="Ikon ${
-//         index + 1
-//       }" class="card_icon" />
-//         <h3 class="card_title">${service.title}</h3>
-//         <p class="card_text">${service.content}</p>
-//         <a href="#" class="card_button">Læs mere</a>
-//       `;
-
-//       container.appendChild(card);
-//     });
-//   })
-//   .catch((error) => {
-//     console.error("Fejl ved indlæsning af JSON:", error);
-//   });
-  
-
 document.addEventListener("DOMContentLoaded", () => {
-  const lesson = document.querySelector(".lesson_container");
+  const intro = document.querySelector(".intro_section");
 
-  function checkLesson() {
-    if (!lesson) return;
+  if (!intro) return;
 
-    const rect = lesson.getBoundingClientRect();
+  function checkIntro() {
+    const rect = intro.getBoundingClientRect();
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
 
     if (rect.top < windowHeight && rect.bottom > 0) {
-      lesson.classList.add("visible");
+      intro.classList.add("visible");
     } else {
-      lesson.classList.remove("visible");
+      intro.classList.remove("visible");
     }
   }
 
-  window.addEventListener("scroll", checkLesson);
-  window.addEventListener("resize", checkLesson);
-  checkLesson();
+  window.addEventListener("scroll", checkIntro);
+  window.addEventListener("resize", checkIntro);
+  checkIntro();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const faqButtons = document.querySelectorAll(".faq-question");
+  const bottom = document.querySelector(".bottom_left");
 
-  faqButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const answerId = button.getAttribute("aria-controls");
-      const answer = document.getElementById(answerId);
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
+  if (!bottom) return;
 
-      document.querySelectorAll(".faq-answer").forEach((el) => {
-        el.classList.remove("show");
-        el.hidden = true;
-      });
-      document
-        .querySelectorAll(".faq-question")
-        .forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+  function checkBottom() {
+    const rect = bottom.getBoundingClientRect();
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
 
-      if (!isExpanded) {
-        answer.hidden = false;
-        answer.classList.add("show");
-        button.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      bottom.classList.add("visible");
+    } else {
+      bottom.classList.remove("visible");
+    }
+  }
+
+  window.addEventListener("scroll", checkBottom);
+  window.addEventListener("resize", checkBottom);
+  checkBottom();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".tilgang_btn");
+
+  if (!btn) return;
+
+  function checkButton() {
+    const rect = btn.getBoundingClientRect();
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  }
+
+  window.addEventListener("scroll", checkButton);
+  window.addEventListener("resize", checkButton);
+  checkButton();
 });

@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap");
 
 body {
@@ -207,118 +208,171 @@ header {
 }
 
 /**/
-.Kontakt_headline {
-  background-color: var(--Dark_blue);
-  padding: 2rem 1rem 1.5rem;
-  margin: 0 auto;
+.section_container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: var(--Dark_blue);
 }
 
-.Kontakt_headline article {
+.section_div {
+  width: 100%;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.Kontakt_headline article.visible {
+.section_div.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.Kontakt_headline article {
-  width: 90%;
+.section_div h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #a07d57;
+}
+
+.span_container {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+.span_container span {
+  padding-bottom: 4%;
+  color: var(--Cream);
 }
 
-.Kontakt_headline article h1 {
-  font-size: 2rem;
-  color: var(--Cream);
-  margin-bottom: 1rem;
-  line-height: 1.1;
-}
-
-.Kontakt_headline article h2 {
-  font-size: 1.1rem;
-  color: var(--Cream);
+.span_container p {
   line-height: 1.6;
+  color: var(--Cream);
 }
 
-@media (min-width: 768px) {
-  .Kontakt_headline {
-    padding: 3rem 1rem 2rem;
-    text-align: left;
+@media (min-width: 800px) {
+  .section_container {
+    height: 40vh;
   }
 
-  .Kontakt_headline article {
-    width: 90%;
+  .span_container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .Kontakt_headline article h1 {
-    color: #a07d57;
-    margin-bottom: 1.5rem;
+  .span_container p {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section_container {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .Kontakt_headline article h2 {
-    max-width: 700px;
+  .span_container p {
+    width: 60%;
+  }
+
+  .section_article {
+    padding-top: 6%;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 850px) {
+  .section_container {
+    height: auto;
+    padding: 4rem 2rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .Kontakt_headline {
-    padding: 4rem 2rem 3rem;
+  .section_container {
+    height: 60vh;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    gap: 3rem;
+  }
+
+  .section_div {
+    width: 90%;
   }
 }
 
-/* Kontakt section */
-.kontakt_wrap {
-  padding: 2rem 1rem;
+/*Service section*/
+.service_wrap {
+  padding: 2rem 2rem;
   background-color: var(--Cream);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
-.kontakt_point {
+.service_inner {
   width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+}
+
+.service_h {
+  padding-left: 0.5rem;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.kontakt_point.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.3s;
+.service_h h3 {
+  font-size: 1.5rem;
+  color: var(--Dark_blue);
+  text-align: left;
+  margin-bottom: 2rem;
+  max-width: 800px;
 }
 
-.kontakt_box {
+.service_point_wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 2rem;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.service_h.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.service_point_wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.service_box {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 1.2rem;
   width: 100%;
-  max-width: 300px;
-  min-height: 200px;
+  max-width: 350px;
+  min-height: 250px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   background-color: var(--Cream);
-  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
@@ -331,71 +385,239 @@ header {
   object-fit: contain;
 }
 
-.text_content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.kontakt_box h4 {
+.service_box h4 {
+  font-size: 1.1rem;
   color: var(--Dark_blue);
-  margin: 0;
+  margin: 0 0 0.5rem 0;
 }
 
-.kontakt_box p {
+.service_box p {
+  font-size: 1rem;
   line-height: 1.4;
   margin: 0;
 }
 
-.kontakt_box:hover {
+.service_box:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 768px) {
-  .kontakt_wrap {
-    display: flex;
-    justify-content: center;
+  .service_point_wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
   }
 
-  .kontakt_point {
-    width: 90%;
-    flex-direction: row;
-    gap: 2rem;
+  .service_box {
+    flex: 1 1 calc(33.333% - 1.5rem);
+  }
+
+  .service_h h3 {
+    font-size: 1.8rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .Kontakt_headline article {
-    padding: 2rem;
+  .service_wrap {
+    padding: 4rem 2rem;
   }
 
-  .kontakt_wrap {
+  .service_h h3 {
+    font-size: 2rem;
+  }
+}
+
+/* about section*/
+.about_section {
+  color: var(--Dark_blue);
+  padding: 2rem 2rem;
+}
+
+.about_container {
+  width: 90%;
+  display: block;
+}
+
+.about_image_wrapper {
+  width: 100%;
+  height: 250px;
+  background-image: url("../images/Weber.JPG");
+  background-size: cover;
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+}
+
+.about_text {
+  width: 100%;
+}
+
+.about_paragraph {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .about_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .about_image_wrapper {
+    width: 40%;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .about_text {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about_section {
     padding: 4rem 2rem;
+  }
+
+  .about_image_wrapper {
+    min-height: 400px;
+  }
+
+  .about_paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding-right: 2rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .Kontakt_headline article {
-    width: 50%;
-    padding: 0;
+  .about_section {
+    display: flex;
+    justify-content: center;
   }
 
-  .kontakt_wrap {
-    padding: 5rem 2rem;
+  .about_container {
+    width: 60%;
+    gap: 4rem;
   }
 
-  .kontakt_box {
-    max-width: 300px;
+  .about_paragraph {
+    font-size: 1.2rem;
   }
 }
 
-/* maps */
-.maps {
+@media (min-width: 1024px) and (max-height: 850px) {
+  .about_container {
+    min-width: 1000px;
+  }
+}
+
+/* Kontakt section*/
+.kontakt_wrapper {
+  position: relative;
+  height: 500px;
   display: flex;
   justify-content: center;
+  background-image: url("../images/contactBackground.jpg");
+  background-size: cover;
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+.kontakt_wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 37, 64, 0.5);
+  z-index: 1;
+}
+
+.kontakt_container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  z-index: 2;
+}
+
+.kontakt_text_div,
+.kontakt_btn_div {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: var(--Cream);
+}
+
+.kontakt_btn_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kontakt_text_div p {
+  margin: 0.5rem 0;
+}
+
+.kontakt_btn_div {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact_btn {
+  background-color: var(--Dark_blue);
+  color: var(--Cream);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  min-width: 250px;
+  min-height: 40px;
+  text-align: center;
+}
+
+.contact_btn:hover {
+  background-color: #0b1a2b;
+}
+
+@media (min-width: 768px) {
+  .kontakt_text_div,
+  .kontakt_btn_div {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 2%;
+  }
+
+  .kontakt_btn_div {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .kontakt_container {
+    max-width: 1100px;
+  }
+
+  .kontakt_text_div {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .kontakt_btn_div {
+    justify-content: center;
+  }
 }
 
 /*Footer*/
