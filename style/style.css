@@ -31,6 +31,33 @@ body {
   --Light_blue: #d1d9e2;
 }
 
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--Cream);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.cookie-banner a {
+  color: var(--Dark_blue);
+  text-decoration: none;
+}
+
+.cookie-banner button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--Burnt_sieanna);
+  color: var(--Cream);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+
 h1 {
   font-size: clamp(1.8rem, 5vw, 3rem);
   font-family: "Playfair Display";

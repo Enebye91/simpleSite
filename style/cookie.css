@@ -214,6 +214,11 @@ header {
   color: var(--Dark_blue);
 }
 
+.cookie_text_wrapper a {
+  color: var(--Cream);
+  text-decoration: none;
+}
+
 .cookie_text_wrapper h1 {
   margin-bottom: 1.5rem;
   color: var(--Cream);
