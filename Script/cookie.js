@@ -15,19 +15,21 @@ function getCookie(name) {
 }
 
 function acceptCookies() {
+  console.log("Bruger klikkede på Accepter");
   setCookie("cookies_accepted", "true", 90);
   enableTracking();
   showTrustpilotSection();
+  document.getElementById("cookie-banner").style.display = "none";
 }
 
 function enableTracking() {
   console.log("Tracking enabled ");
 }
 
-// function showTrustpilotSection() {
-//   const section = document.getElementById("trustpilot-section");
-//   if (section) section.style.display = "block";
-// }
+function showTrustpilotSection() {
+  const section = document.getElementById("trustpilot-section");
+  if (section) section.style.display = "block";
+}
 
 window.addEventListener("DOMContentLoaded", () => {
   if (getCookie("cookies_accepted") === "true") {
